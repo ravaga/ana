@@ -1,0 +1,194 @@
+{
+  "url": "http://google.com",
+  "messages": [
+    {
+      "type": "info",
+      "url": "http://google.com/",
+      "subType": "warning",
+      "message": "Using “windows-1252” instead of the declared encoding “iso-8859-1”."
+    },
+    {
+      "type": "info",
+      "url": "http://google.com/",
+      "subType": "warning",
+      "message": "Legacy encoding “windows-1252” used. Documents should use UTF-8."
+    },
+    {
+      "type": "error",
+      "lastLine": 1,
+      "lastColumn": 385,
+      "firstColumn": 319,
+      "message": "Internal encoding declaration “utf-8” disagrees with the actual encoding of the document (“windows-1252”).",
+      "extract": "=\"robots\"><meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\"><meta ",
+      "hiliteStart": 10,
+      "hiliteLength": 67
+    },
+    {
+      "type": "error",
+      "lastLine": 3,
+      "lastColumn": 1411,
+      "firstColumn": 1391,
+      "message": "The “bgcolor” attribute on the “body” element is obsolete. Use CSS instead.",
+      "extract": "n\"></head><body bgcolor=\"#fff\"><scrip",
+      "hiliteStart": 10,
+      "hiliteLength": 21
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 52,
+      "firstColumn": 47,
+      "message": "Element “nobr” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)",
+      "extract": "v id=gbar><nobr><b cla",
+      "hiliteStart": 10,
+      "hiliteLength": 6
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 703,
+      "firstColumn": 679,
+      "message": "Attribute “width” not allowed on element “div” at this point.",
+      "extract": "</div><div id=guser width=100%><nobr><spa",
+      "hiliteStart": 10,
+      "hiliteLength": 25
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 709,
+      "firstColumn": 704,
+      "message": "Element “nobr” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)",
+      "extract": "=100%><nobr><span id=g",
+      "hiliteStart": 10,
+      "hiliteLength": 6
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 1171,
+      "firstColumn": 1164,
+      "message": "The “center” element is obsolete. Use CSS instead.",
+      "extract": "div><center><br clear=\"a",
+      "hiliteStart": 10,
+      "hiliteLength": 8
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 1197,
+      "firstColumn": 1172,
+      "message": "The “clear” attribute on the “br” element is obsolete. Use CSS instead.",
+      "extract": "ter><br clear=\"all\" id=\"lgpd\"><div id=\"lga",
+      "hiliteStart": 10,
+      "hiliteLength": 26
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 1490,
+      "firstColumn": 1452,
+      "message": "The “cellpadding” attribute on the “table” element is obsolete. Use CSS instead.",
+      "extract": "f\"><table cellpadding=\"0\" cellspacing=\"0\"><tr valign=\"t",
+      "hiliteStart": 10,
+      "hiliteLength": 39
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 1490,
+      "firstColumn": 1452,
+      "message": "The “cellspacing” attribute on the “table” element is obsolete. Use CSS instead.",
+      "extract": "f\"><table cellpadding=\"0\" cellspacing=\"0\"><tr valign=\"t",
+      "hiliteStart": 10,
+      "hiliteLength": 39
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 1507,
+      "firstColumn": 1491,
+      "message": "The “valign” attribute on the “tr” element is obsolete. Use CSS instead.",
+      "extract": "0\"><tr valign=\"top\"><td width=\"25",
+      "hiliteStart": 10,
+      "hiliteLength": 17
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 1523,
+      "firstColumn": 1508,
+      "message": "The “width” attribute on the “td” element is obsolete. Use CSS instead.",
+      "extract": "p\"><td width=\"25%\">&nbsp;</td><t",
+      "hiliteStart": 10,
+      "hiliteLength": 16
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 1563,
+      "firstColumn": 1535,
+      "message": "The “align” attribute on the “td” element is obsolete. Use CSS instead.",
+      "extract": "td><td align=\"center\" nowrap=\"\"><input name=\"",
+      "hiliteStart": 10,
+      "hiliteLength": 29
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 1563,
+      "firstColumn": 1535,
+      "message": "The “nowrap” attribute on the “td” element is obsolete. Use CSS instead.",
+      "extract": "td><td align=\"center\" nowrap=\"\"><input name=\"",
+      "hiliteStart": 10,
+      "hiliteLength": 29
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 2395,
+      "firstColumn": 2341,
+      "message": "The “align” attribute on the “td” element is obsolete. Use CSS instead.",
+      "extract": "td><td class=\"fl sblc\" align=\"left\" nowrap=\"\" width=\"25%\"><a href=\"/adv",
+      "hiliteStart": 10,
+      "hiliteLength": 55
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 2395,
+      "firstColumn": 2341,
+      "message": "The “nowrap” attribute on the “td” element is obsolete. Use CSS instead.",
+      "extract": "td><td class=\"fl sblc\" align=\"left\" nowrap=\"\" width=\"25%\"><a href=\"/adv",
+      "hiliteStart": 10,
+      "hiliteLength": 55
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 2395,
+      "firstColumn": 2341,
+      "message": "The “width” attribute on the “td” element is obsolete. Use CSS instead.",
+      "extract": "td><td class=\"fl sblc\" align=\"left\" nowrap=\"\" width=\"25%\"><a href=\"/adv",
+      "hiliteStart": 10,
+      "hiliteLength": 55
+    },
+    {
+      "type": "error",
+      "lastLine": 6,
+      "lastColumn": 2729,
+      "firstColumn": 2702,
+      "message": "Element “div” not allowed as child of element “span” in this context. (Suppressing further errors from this subtree.)",
+      "extract": "r\"><div style=\"font-size:10pt\"><div style=\"m",
+      "hiliteStart": 10,
+      "hiliteLength": 28
+    },
+    {
+      "type": "error",
+      "url": "http://google.com/",
+      "lastLine": 6,
+      "lastColumn": 3057,
+      "message": "Element “p” not allowed as child of element “span” in this context. (Suppressing further errors from this subtree.)"
+    }
+  ]
+}

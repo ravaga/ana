@@ -1,0 +1,30 @@
+{
+  "name": "webAnalysis",
+  "authors": [
+    "Rafa's iMac <rafackyou@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.7",
+    "ng-tour": "ng-route#*",
+    "angular-route": "^1.5.8",
+    "font-awesome": "^4.6.3",
+    "pdfmake": "^0.1.20",
+    "html2canvas": "^0.4.1",
+    "angular-base64": "^2.0.5",
+    "angular-loading-bar": "^0.9.0",
+    "angular-bootstrap": "^2.0.0"
+  }
+}

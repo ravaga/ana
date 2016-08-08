@@ -1,0 +1,11 @@
+{
+    "apis": {
+        "speed":"https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=",
+        "mobile":"https://www.googleapis.com/pagespeedonline/v3beta1/mobileReady?url=",
+        "w3HTML":"https://validator.w3.org/nu/?doc=",
+        "screenshotlayer": {
+            "url": "http://api.screenshotlayer.com/api/capture",
+            "key": "c53289ccf519f17b07b3713273fabf9f"
+        }
+    }
+}
