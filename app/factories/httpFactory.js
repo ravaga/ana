@@ -1,6 +1,6 @@
 'use strict';
 var app = angular.module('analysisApp');
-app.factory('CallFactory', function($http, resultService, scoreService){
+app.factory('httpFactory', function($http, resultService, scoreService){
     
     /*Speed Call Function*/
     var Speed = function($var)
@@ -101,7 +101,7 @@ app.factory('CallFactory', function($http, resultService, scoreService){
     //get config routes
     var config = function($var)
     {
-        var debugMode = false; 
+        var debugMode = true; 
                 
         if(debugMode == false)
         {

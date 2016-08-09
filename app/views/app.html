@@ -1,23 +1,15 @@
 <div class="wrap">
-    <div class="appHeader" style="height:150px;"></div>
-    <!-- Form -->
-    <div class="row">
-        <div class="container">
-
-            <div ng-include="'app/views/form.html'"></div>
-       
-        </div>
-    </div>
+    <div class="appHeader" style="height:100px;"></div>
 
     <!-- Results -->
     <div class="row">
-        <div class="container" ng-show="results">
+        <div class="container" ng-show="resultView">
             <div ng-include="'app/views/result.html'"></div>
         </div>
     </div>
     <!-- Tools -->
     <div class="row">
-        <div class="container" id="mobile">
+        <div class="container" ng-show="resultView">
             <div ng-include="'app/views/mobiles.html'"></div>
         </div>
     </div>

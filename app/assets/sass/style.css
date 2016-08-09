@@ -6,13 +6,8 @@ html body {
   min-height: 100%;
   padding-bottom: 150px; }
 
-.container {
-  padding-top: 15px;
-  padding-bottom: 15px; }
-
 .navbar {
   background: white;
-  margin-bottom: 0px;
   border: none;
   border-radius: 0px; }
   .navbar .nav-input {

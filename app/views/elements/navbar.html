@@ -6,14 +6,14 @@
                 </div>
             </div>
             <form class="navbar-form text-center" ng-controller="navController">
-                <input type="url" ng-model="url" class="form-control nav-input" placeholder="http(s)://example.com">
-                 <button ng-show="!results" 
+                <input type="url" ng-model="url" class="form-control nav-input" placeholder="{{input.placeholder}}" ng-disabled="!input.status">
+                 <button ng-show="input.status" 
                          ng-click="load(url)" 
                          class="btn btn-success">
                         <i class="fa fa-search"></i> 
                         Go!
                 </button>
-                 <button ng-show="results" ng-click="clear()" class="btn btn-warning">
+                 <button ng-show="!input.status" ng-click="clearR()" class="btn btn-warning">
                     <i class="fa fa-tower"></i> Clear
                 </button>
             </form>

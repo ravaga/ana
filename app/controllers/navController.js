@@ -2,25 +2,33 @@
 
 var app = angular.module('analysisApp');
 
-app.controller('navController', function($scope, CallFactory, resultService){
+app.controller('navController', function($scope, httpFactory, resultService){
     
+    
+    $scope.input = {
+        status:true,
+        placeholder:'http://yoursite.com',
+    }
     
     $scope.load = function($var)
     {
-        $scope.results = true;
-        var speedTest = CallFactory.Speed($var);
-        var mobileTest = CallFactory.Mobile($var);
-        var markupTest = CallFactory.Markup($var);
+        $scope.input.status = false;
+        var userInput = resultService.addSite($var);
+        var speedTest = httpFactory.Speed($var);
+        var mobileTest = httpFactory.Mobile($var);
+        var markupTest = httpFactory.Markup($var);
             
     }
-    
-    $scope.clear = function()
+
+    $scope.clearR = function()
     {
-        $scope.results = false;
+        $scope.input.status = true;
+        $scope.url='';
+        $scope.input.placeholder = 'http://yoursite.com';
         resultService.clearResults(); 
-        console.log(resultService.getResults());
+        console.log("Results Cleared");
     }
     
-    
+    $scope.load('http://localhost/www/cdn/');
     
 });

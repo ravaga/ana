@@ -4,12 +4,19 @@ var app = angular.module('analysisApp');
 
 app.service('resultService',function($rootScope){
     
+    var limit = 3;
     var resultsList = [];
     var screenshot = [];
     var testSite = '';
     
     var addResults = function(obj){
-        resultsList.push(obj);
+        
+        resultsList.push(obj)
+        if(resultsList.length == limit)
+        {
+            $rootScope.$broadcast('results:updated');
+        }
+        
     };
     
     var addScreenshot = function(obj)
