@@ -11,7 +11,6 @@ app.config(function($routeProvider){
     $routeProvider.
     when('/', {
         templateUrl: 'app/views/app.html',
-        controller: 'lookUpController',
-        controllerAs: 'main'
+        controller: 'mainController',
     })
 });

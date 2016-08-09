@@ -1,6 +1,7 @@
 
 html body{
     height:100%;
+    background:#eee;
 }
 
 .wrap{
@@ -14,11 +15,13 @@ html body{
     padding-bottom:15px;
 }
 .navbar{
-    background:black;
-    padding:25px;
+    background:white;
     margin-bottom:0px;
     border:none;
     border-radius: 0px;
+    .nav-input{
+        width:500px;
+    }    
 }
 
 .bgHeader{
@@ -38,7 +41,13 @@ html body{
         padding-top:75;
     }
 }
+.form-control{
+    border-radius: 50px !important;
+}
 
+.btn{
+    border-radius:20px !important;
+}
 .iframeBG{
     background-position:center;
     background-repeat: no-repeat;
@@ -70,9 +79,9 @@ html body{
     text-align: center;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 550px;
+    height: 450px;
     display: inline-block;
-    padding-top: 108px;
+    padding-top: 58px;
     .screenshot{
         width: 188px;
         height: auto;

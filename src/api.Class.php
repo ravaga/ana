@@ -96,6 +96,7 @@ class analize{
             return false;
         //decode response 
         $array = json_decode($result, true);
+        
         //select what we need
         $mobile = $array["ruleGroups"]["USABILITY"];
         $messages = $array["formattedResults"]["ruleResults"];

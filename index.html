@@ -5,7 +5,7 @@
     <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <meta name="author" content="Hege Refsnes">
     
-    <title>VIVID Software Solutions Web Analysis</title>
+    <title>Ana</title>
     
     <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> 
     
@@ -20,25 +20,11 @@
     
 </head>
 <body ng-app="analysisApp">
-    <nav class="navbar  navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <div class="navbar-brand" id="logo">
-                    <a><img class="img img-responsive" src="app/assets/imgs/vivid_logo.png"></a>
-                </div>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <!--<li><a>This link</a></li>
-                <li><a>Another link</a></li>-->
-            </ul>
-        </div>
-    </nav>
-    <div class="wrap">
+    <div ng-include="'app/views/elements/navbar.html'"></div>
     <ng-view></ng-view>
-    </div>
     <footer id="footer" class="">
         <div class="container-fluid">
-            <h5 class="text-center">copyright &copy; VividSoftwareSolutions.com </h5>     
+            <h5 class="text-center">copyright &copy; ana.com </h5>     
         </div>
     </footer>
 </body>
@@ -57,14 +43,14 @@
     
 <!--App Script -->   
 <script type="text/javascript" src="app/app.js"></script>
-<script type="text/javascript" src="app/controllers/search.controller.js"></script>
+<script type="text/javascript" src="app/controllers/mainController.js"></script>
+<script type="text/javascript" src="app/controllers/navController.js"></script>
 <script type="text/javascript" src="app/controllers/exportController.js"></script>
     
 
 <!--Services -->    
-<script type="text/javascript" src="app/services/resultService.js"></script>
-    
+<script type="text/javascript" src="app/services/callService.js"></script>
+<script type="text/javascript" src="app/services/scoreService.js"></script>   
+<script type="text/javascript" src="app/services/resultService.js"></script>   
 <!--end html -->
 </html>
-
-<script type="text/javascript" src="app/assets/js/scripts.js"></script>

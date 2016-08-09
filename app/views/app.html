@@ -1,37 +1,37 @@
-<div class="bgHeader"></div>
-<!-- Form -->
-<div class="row">
-    <div class="container">
+<div class="wrap">
+    <div class="appHeader" style="height:150px;"></div>
+    <!-- Form -->
+    <div class="row">
+        <div class="container">
 
-        <div ng-include="'app/views/form.html'"></div>
+            <div ng-include="'app/views/form.html'"></div>
        
+        </div>
     </div>
-</div>
 
-<!-- Results -->
-<div class="row">
-    <div class="container" ng-show="!form">
-        <div ng-include="'app/views/result.html'"></div>
+    <!-- Results -->
+    <div class="row">
+        <div class="container" ng-show="results">
+            <div ng-include="'app/views/result.html'"></div>
+        </div>
     </div>
-</div>
-<!-- Tools -->
-<div class="row">
-    <div class="row" id="iframeSection" ng-show="!form">
-        <div ng-include="'app/views/mobiles.html'"></div>
+    <!-- Tools -->
+    <div class="row">
+        <div class="container" id="mobile">
+            <div ng-include="'app/views/mobiles.html'"></div>
+        </div>
     </div>
-</div>
 
-
-<!-- DEBUGER -->
-<br/><br/>
-<div ng-show="debugPannel" class="row">
-    <div class="container">
+    <!-- DEBUGER -->
+    <br/><br/>
+    <div ng-show="debugPannel" class="row">
+        <div class="container">
         
         <div class="col-md-10 col-md-offset-1">
             <button ng-click="debugger()" class="btn btn-danger">
             Debug Log
             </button>
-            <pre  ng-show="!debug">DEBUG LOG:<br/>
+            <pre  ng-show="debug">DEBUG LOG:<br/>
             <b>FORM:</b> {{form | json}}
             
             <b>RESULTS:</b>{{results | json}}
@@ -39,4 +39,6 @@
         </div>
     </div>
 </div>
+</div>
+
 

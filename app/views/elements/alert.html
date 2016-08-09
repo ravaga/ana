@@ -1,6 +1,5 @@
 <div class="alert alert-{{alert.label}} fade-in">
     <button class="close" data-dismiss="alert" aria-label="close">&times;</button>
-    <h3 class="text-center">{{alert.message}}</h2>
-    <br>
-    <h4 class="text-center">Site Score <b>{{alert.score | number : 2}}</b></h3>
+    {{alert.message}}<br/>
+    Site Score <strong>{{alert.score | number : 2}}</strong>
 </div>        

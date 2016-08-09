@@ -1,15 +1,49 @@
-<h3 class="text-center">Mobile Views</h3>
-<div ng-repeat="iframe in iframes">
-    <h5 class="text-center"><i>{{iframe.title}} {{iframe.width}}x{{iframe.height}}</i></h5>
-    <h6 class="text-center">{{iframe.class}}</h6>
-    <div class="iframeBG {{iframe.class}}" 
-         style="background-image:url('{{iframe.view}}');">
-            
-        <iframe class="mobileIframe center-block" 
-                src="{{iframe.url}}" 
-                width="{{iframe.width}}" 
-                height="{{iframe.height}}">           
-        </iframe>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3 class="text-center">Mobile Views</h3>
+        <ul id="myTabs" class="nav nav-tabs nav-justified">
+            <li role="presentation" class="active">
+                <a href="#iphones" 
+                   aria-controls="iphones" 
+                   role="tab" 
+                   data-toggle="tab">
+                    iPhone
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="#ipads" 
+                   aria-controls="ipads" 
+                   role="tab" 
+                   data-toggle="tab">
+                    iPad
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
-
+<br/>
+<div class="row">
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="iphones" role="tabpanel">
+            <div ng-repeat="iframe in iframes">
+                <h5 class="text-center"><i>{{iframe.title}}         {{iframe.width}}x{{iframe.height}}</i></h5>
+                <h6 class="text-center">{{iframe.class}}</h6>
+                <div class="iframeBG {{iframe.class}}" 
+                     style="background-image:url('{{iframe.view}}');">
+            
+                    <iframe class="mobileIframe center-block" 
+                            src="{{iframe.url}}" 
+                            width="{{iframe.width}}" 
+                            height="{{iframe.height}}">           
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>

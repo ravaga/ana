@@ -1,23 +1,24 @@
 <div class="col-md-4 left">
     <div class="container-fluid">
         <div class="col-md-12">
-            <div class="text-center">
-                <button ng-click="gotoIframes()" class="btn btn-primary">Check on Mobiles</button>
-            </div>
             <div class="mobile_placeholder">
-                <div class="spinner" ng-show="!imageView">
+                <div class="spinner" ng-show="!screenshot">
                     <h5 class="text-center">Screenshot</h5>
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                     <span class="sr-only">Loading...</span>
                 </div>
-                <img ng-show="imageView" class="screenshot" data-ng-src="{{'data:image/jpeg;base64,'+ imageView}}">
+                
+                <div ng-repeat="image in screenshot">
+                    {{image.mime_type}}
+                <img class="screenshot" data-ng-src="{{'data:image/jpeg;base64,'+ image.data}}">
+                </div>
             </div>
         </div>
     </div>    
 </div>
 
-<div class="col-md-8 right">
-    <div id="resultSpinner" class="container-fluid text-center" ng-show="!results">
+<div class="col-md-8">
+    <div class="container-fluid text-center" id="resultSpinner"  ng-show="!results">
        <i  class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
         <span class="sr-only">Loading...</span> 
     </div>
@@ -25,11 +26,12 @@
         <div ng-include="'app/views/elements/alert.html'"></div>
     </div>
     <div class="row">
-        <div class="container-fluid" id="Export" ng-show="results">
-            <div class="col-md-4 testBox" ng-repeat="result in results">
-                <div ng-repeat="(key, value) in result">
+        <div class="container-fluid" id="Export">
+            <div class="col-md-4 testBox" ng-repeat="(key, value) in results">
+                <div >
                     <h3 class="text-center">
                     {{value.title}}
+                        <a data-toggle="modal" data-target="#{{key}}Modal"><i class="fa fa-warning"></i></a>
                     </h3>
                     <div class="text-center">
                         <div class="spinner" ng-show="!value.icon">
@@ -47,9 +49,6 @@
                             </span>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#{{key}}Modal">
-                    More Info
-                    </button>
                     <div ng-include="'app/views/elements/modal.html'"></div>
                 </div>
             </div>
@@ -59,8 +58,7 @@
         <div class="container-fluid">
             <div class="col-md-12">
                 <div class="text-right">
-                    <h5>Export</h5>
-                    <button ng-show="!form" ng-click="clearLookUp()" class="btn btn-danger btn-sm">New Search</button>    
+                    <h5>Export</h5>  
                     <button class="btn btn-primary btn-sm" ng-click="export()">Export to PDF</button>
                     <div ng-include="'app/views/elements/export.html'"></div>
                 </div>
