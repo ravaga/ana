@@ -1,0 +1,23 @@
+<div ng-show="debugPannel" class="row">
+        <div class="container">
+        <div class="col-md-10 col-md-offset-1">
+            <button ng-click="debugger()" class="btn btn-danger">
+            Debug Log
+            </button>
+            <pre  ng-show="debug">DEBUG LOG:<br/>
+            <b>Site:</b><br/>
+            {{site | json}}
+            
+            <b>Alert:</b><br/> 
+            {{alert | json}}
+            
+            <b>Iframes:</b><br/>
+            {{iframes | json}}
+            
+            <b>RESULTS:</b><br/>
+            {{results | json}}
+            
+            </pre>
+        </div>
+    </div>
+</div>

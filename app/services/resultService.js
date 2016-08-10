@@ -2,7 +2,7 @@
 
 var app = angular.module('analysisApp');
 
-app.service('resultService',function($rootScope){
+app.service('resultService',function($rootScope, alertService){
     
     var limit = 3;
     var resultsList = [];
@@ -37,6 +37,8 @@ app.service('resultService',function($rootScope){
     {
         testSite = site;    
     }
+    
+    
     var getSite = function()
     {
         return testSite;
@@ -45,8 +47,9 @@ app.service('resultService',function($rootScope){
     var clearResults = function()
     {
         resultsList = [];
-        testSite = '';
         screenshot = [];
+        alertService.clearAlert();
+        testSite = '';
         $rootScope.$broadcast('results:cleared');
         
     }

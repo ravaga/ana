@@ -51,6 +51,7 @@ class analize{
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         $result = curl_exec($curl);
+        $info = curl_getinfo($curl);
         curl_close($curl);
         if(!$result)
             return false;
@@ -60,10 +61,12 @@ class analize{
         $speed = $array["ruleGroups"]["SPEED"];
         $messages = $array["formattedResults"]["ruleResults"];
         $stats = $array["pageStats"];
+        $time = $info["total_time"];
         
         
         $group = [
             "test"=> $speed,
+            "total_time"=>$time,
             "alerts"=> count($messages),
             "stats"=> $stats,
             "messages"=> $messages,
@@ -91,6 +94,7 @@ class analize{
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         $result = curl_exec($curl);
+        $info = curl_getinfo($curl);
         curl_close($curl);
         if(!$result)
             return false;
@@ -101,9 +105,11 @@ class analize{
         $mobile = $array["ruleGroups"]["USABILITY"];
         $messages = $array["formattedResults"]["ruleResults"];
         $screenshot = $array["screenshot"];
-
+        $time = $info["total_time"];
+        
         $group = [
             "test"=> $mobile,
+            "total_time"=>$time,
             "alerts"=> count($messages),
             "messages"=> (array)$messages,
             "screenshot"=>$screenshot
@@ -128,12 +134,14 @@ class analize{
         $curl = curl_init( $url );
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         // Getting results
-        $result =  curl_exec($curl); 
+        $result =  curl_exec($curl);
+        $info = curl_getinfo($curl);
         curl_close($curl);
         if(!$result)
         {
             return false;
         }
+        
         //return
         return $result;  
         

@@ -10,6 +10,7 @@ app.factory('iframeFactory', function(resultService, $sce){
                 iframe(375,667, "iPhone"), 
                 iframe(667,375, "iPhone")
             ];
+        console.log(iframes);
         return iframes;
     }
     

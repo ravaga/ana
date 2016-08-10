@@ -11,15 +11,15 @@ app.controller("mainController", function($scope, $filter, $uibModal, $anchorScr
         $anchorScroll();
     }
     
-
-    $scope.results = resultService.getResults();
-    $scope.screenshot = resultService.getScreenshot();
     
     //Results Listener
     $scope.$on('results:updated', function(){
         
         //set results view
         $scope.resultView = true;
+        $scope.site = resultService.getSite();
+        $scope.results = resultService.getResults();
+        $scope.screenshot = resultService.getScreenshot();
         $scope.alert = alertService.getAlert($scope.results);
         //generate iframes if we have results
         $scope.iframes = iframeFactory.getIframes();
@@ -33,6 +33,8 @@ app.controller("mainController", function($scope, $filter, $uibModal, $anchorScr
         $scope.resultView = false;
         $scope.results = resultService.getResults();
         $scope.screenshot = resultService.getScreenshot();
+        $scope.site = resultService.getSite();
+        $scope.alert = [];
         
     })
    

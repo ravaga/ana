@@ -21,7 +21,9 @@
 </head>
 <body ng-app="analysisApp">
     <div ng-include="'app/views/elements/navbar.html'"></div>
-    <ng-view></ng-view>
+    <div class="wrap">
+        <ng-view></ng-view>
+    </div>
     <footer id="footer" class="">
         <div class="container-fluid">
             <h5 class="text-center">copyright &copy; ana.com </h5>     
@@ -40,7 +42,6 @@
 <script type="text/javascript" src="bower_components/html2canvas/build/html2canvas.min.js"></script>
 <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
-    
 <!--App Script -->   
 <script type="text/javascript" src="app/app.js"></script>
 <script type="text/javascript" src="app/controllers/mainController.js"></script>

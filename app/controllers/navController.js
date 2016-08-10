@@ -12,6 +12,12 @@ app.controller('navController', function($scope,$http, httpFactory, resultServic
     
     $scope.load = function($var)
     {
+        console.log($var);
+        if($var == null)
+        {
+            console.log('Yes Indeed');
+            return false;
+        }
         $scope.input.status = false;
         var userInput = resultService.addSite($var);
         var speedTest = httpFactory.Speed($var);

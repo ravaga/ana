@@ -48,6 +48,9 @@ html body {
   .iframeBG .mobileIframe {
     border: none; }
 
+.panel {
+  padding: 20px; }
+
 .testBox {
   height: auto;
   padding: 25px; }

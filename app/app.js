@@ -4,6 +4,7 @@ var app = angular.module("analysisApp", [
     "ngRoute", 
     "angular-loading-bar", 
     "ui.bootstrap"
+
 ]);
 
 app.config(function($routeProvider){

@@ -1,7 +1,11 @@
-<div class="wrap">
-    <div class="appHeader" style="height:100px;"></div>
 
-    <!-- Results -->
+    <div class="appHeader" style="height:100px;"></div>
+    
+    <!--Fist -->
+    <div ng-include="'app/views/results.html'"></div>
+    
+    
+    <!-- Results 
     <div class="row">
         <div class="container" ng-show="resultView">
             <div ng-include="'app/views/result.html'"></div>
@@ -16,21 +20,6 @@
 
     <!-- DEBUGER -->
     <br/><br/>
-    <div ng-show="debugPannel" class="row">
-        <div class="container">
-        
-        <div class="col-md-10 col-md-offset-1">
-            <button ng-click="debugger()" class="btn btn-danger">
-            Debug Log
-            </button>
-            <pre  ng-show="debug">DEBUG LOG:<br/>
-            <b>FORM:</b> {{form | json}}
-            
-            <b>RESULTS:</b>{{results | json}}
-            </pre>
-        </div>
-    </div>
-</div>
-</div>
+    <div ng-include="'app/views/elements/debugger.html'"></div>
 
 

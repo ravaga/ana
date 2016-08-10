@@ -1,7 +1,5 @@
 <?php
     
-    
-
 
     require('api.Class.php');
     analize::init("apiConfig.json");

@@ -10,17 +10,33 @@ app.factory('httpFactory', function($http, resultService, scoreService){
             //success
             .then(function success(data){
             var responseData = data.data;
-            
             var score = scoreService.getScore(responseData.test.score);
+            
+            var mgs = [];
+            var messages = responseData.messages;
+            angular.forEach(messages, function(key){
+                
+                if(key.ruleImpact != 0)
+                {
+                    var m = {
+                        title:key.localizedRuleName,
+                        impact:key.ruleImpact
+                    }
+                    mgs.push(m);
+                }
+                
+            });
             
             var group = {
                     title:'Speed',
-                    icon:score.icon,
+                    time:responseData.total_time,
+                    status:score.icon,
+                    icon:'dashboard',
                     label:score.flag,
                     sign:score.sign,
                     score:responseData.test.score,
-                    alerts:responseData.alerts,
-                    messages:responseData.messages,
+                    alerts:mgs.length,
+                    messages:mgs,
             };
             
             resultService.addResults(group);
@@ -44,14 +60,31 @@ app.factory('httpFactory', function($http, resultService, scoreService){
             var score = scoreService.getScore(responseData.test.score);
             var imgData = cleanBase64(responseData.screenshot.data);
             
+            var mgs = [];
+            var messages = responseData.messages;
+            angular.forEach(messages, function(key){
+                if(key.ruleImpact != 0)
+                {
+                    var m = {
+                        title:key.localizedRuleName,
+                        impact:key.ruleImpact
+                    }
+                    mgs.push(m);
+                }
+                
+            });
+            
+            
+            
             var group = {
                     title:'Mobile',
-                    icon:score.icon,
+                    status:score.icon,
+                    icon:'mobile',
                     label:score.flag,
                     sign:score.sign,
                     score:responseData.test.score,
-                    alerts:responseData.alerts,
-                    messages:responseData.messages,
+                    alerts:mgs.length,
+                    messages:mgs,
                     screenshot: {
                         data:imgData,
                         mime:responseData.screenshot.mime_type
@@ -74,15 +107,30 @@ app.factory('httpFactory', function($http, resultService, scoreService){
             .then(function success(data){
             var responseData = data.data;
             
-            var dataScore = (100 - responseData.messages.length);
+            var alerts = responseData.messages.length;
+            var dataScore = (100 - alerts);
             var score = scoreService.getScore(dataScore);
+            
+            
+            var mgs = [];
+            var messages = responseData.messages;
+            angular.forEach(messages, function(key){
+                var m = {
+                        title:key.message,
+                        impact:key.type
+                        };
+                    mgs.push(m);    
+            });
+            
             var group = {
                     title:'Markup',
-                    icon:score.icon,
+                    status:score.icon,
+                    icon:'code',
                     label:score.flag,
                     sign:score.sign,
                     score:dataScore,
-                    messages:responseData.messages,
+                    alerts:mgs.length,
+                    messages:mgs,
                 };
             console.log(group);
             resultService.addResults(group);
