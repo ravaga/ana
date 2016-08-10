@@ -2,7 +2,7 @@
 
 var app = angular.module('analysisApp');
 
-app.controller('navController', function($scope, httpFactory, resultService){
+app.controller('navController', function($scope,$http, httpFactory, resultService){
     
     
     $scope.input = {
@@ -29,6 +29,8 @@ app.controller('navController', function($scope, httpFactory, resultService){
         console.log("Results Cleared");
     }
     
-    $scope.load('http://localhost/www/cdn/');
+    
+    
+    //$scope.load('http://localhost/www/cdn/');
     
 });

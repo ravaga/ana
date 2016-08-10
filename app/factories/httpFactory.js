@@ -8,26 +8,27 @@ app.factory('httpFactory', function($http, resultService, scoreService){
         var obj = config($var);
         $http.get(obj.speed)
             //success
-            .success(function(data){
+            .then(function success(data){
+            var responseData = data.data;
             
-            var score = scoreService.getScore(data.test.score);
+            var score = scoreService.getScore(responseData.test.score);
             
             var group = {
                     title:'Speed',
                     icon:score.icon,
                     label:score.flag,
                     sign:score.sign,
-                    score:data.test.score,
-                    alerts:data.alerts,
-                    messages:data.messages,
+                    score:responseData.test.score,
+                    alerts:responseData.alerts,
+                    messages:responseData.messages,
             };
             
             resultService.addResults(group);
             console.log(group);
-        })
+        },
             //error
-            .error(function(data){
-            
+            function error(err){
+               console.log(err);
         });
         
     }
@@ -37,28 +38,30 @@ app.factory('httpFactory', function($http, resultService, scoreService){
     {
         var obj = config($var);
         $http.get(obj.mobile)
-            .success(function(data){
-            var score = scoreService.getScore(data.test.score);
-            var imgData = cleanBase64(data.screenshot.data);
+            .then(function success(data){
+            var responseData = data.data;
+            
+            var score = scoreService.getScore(responseData.test.score);
+            var imgData = cleanBase64(responseData.screenshot.data);
             
             var group = {
                     title:'Mobile',
                     icon:score.icon,
                     label:score.flag,
                     sign:score.sign,
-                    score:data.test.score,
-                    alerts:data.alerts,
-                    messages:data.messages,
+                    score:responseData.test.score,
+                    alerts:responseData.alerts,
+                    messages:responseData.messages,
                     screenshot: {
                         data:imgData,
-                        mime:data.screenshot.mime_type
+                        mime:responseData.screenshot.mime_type
                     }
             };
             resultService.addScreenshot(group.screenshot);
             resultService.addResults(group);
             console.log(group);
-        })
-            .error(function(err){
+        },
+            function error(err){
             //Do something
         });
         
@@ -68,8 +71,10 @@ app.factory('httpFactory', function($http, resultService, scoreService){
     {
         var obj = config($var);
         $http.get(obj.markup)
-            .success(function(data){
-            var dataScore = (100 - data.messages.length);
+            .then(function success(data){
+            var responseData = data.data;
+            
+            var dataScore = (100 - responseData.messages.length);
             var score = scoreService.getScore(dataScore);
             var group = {
                     title:'Markup',
@@ -77,12 +82,12 @@ app.factory('httpFactory', function($http, resultService, scoreService){
                     label:score.flag,
                     sign:score.sign,
                     score:dataScore,
-                    messages:data.messages,
+                    messages:responseData.messages,
                 };
             console.log(group);
             resultService.addResults(group);
-        })
-            .error(function(err){
+        },
+            function error(err){
             //Do Something
         });
     }
@@ -101,7 +106,7 @@ app.factory('httpFactory', function($http, resultService, scoreService){
     //get config routes
     var config = function($var)
     {
-        var debugMode = true; 
+        var debugMode = false; 
                 
         if(debugMode == false)
         {

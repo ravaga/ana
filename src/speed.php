@@ -1,7 +1,9 @@
 <?php
     
+    
 
-  require('api.Class.php');
+
+    require('api.Class.php');
     analize::init("apiConfig.json");
 
     if(isset($_GET["url"]))
@@ -10,8 +12,8 @@
         print_r($speed_response);   
     }
     else
-    {
-        echo("<pre>Something's wrong</pre>");
+    {   
+        echo("Huston, we have a problem with the url parameter. ... kshhh ....  over... ");   
     }
 
 
